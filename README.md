@@ -1,6 +1,6 @@
 # Marketplace Partner Apps
 
-This repository contains the source code for partner apps on the [marketplace](https://www.contentful.com/marketplace/) and helpful resources to build your own apps for Contentful.
+This organization contains the source code for partner apps on the [marketplace](https://www.contentful.com/marketplace/) and helpful resources to build your own apps for Contentful.
 
 ## Installing an app
 
