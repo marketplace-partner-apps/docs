@@ -6,24 +6,9 @@ This organization contains the source code for partner apps on the [marketplace]
 
 Head over to the [marketplace](https://www.contentful.com/marketplace/) and follow the installation flow to set up any of the apps in your Contentful space.
 
-## Adding and maintaining your app in this repo
-
-The Marketplace Partner Apps repo is maintained as a monorepo, containing several ecosystem partner apps + the tools needed to build and maintain them. The `apps` folder contains each partner app, and each sub-folder within `apps` should contain all the code necessary to build, test, and deploy your app without references to other apps or folders.
+## Adding and maintaining your app in this organization
 
 ### First time setup
-
-The `marketplace-partner-apps` repo uses [Github Actions](https://github.com/features/actions) (configured in `.github/workflows/CI.yml`) to deploy itself, and [TurboRepo](https://turbo.build/repo) (configured in `turbo.json`) to manage the collection of partner apps.
-
-In order for your app to be deployed successfully, it must meet the following criteria:
-
-- Have a `package.json` file with the following `scripts`:
-  - `build`
-    - creates a build artifact(s). `"react-scripts build"` is common for most apps without specific needs, though whatever tool or process you prefer is fine so long as it creates artifacts that can be referenced in the deploy step.
-  - `test` (not necessary, but **highly** encouraged).
-    - Once again `"react-scripts test"` is common for many apps and should be considered if you do not have complicated tests. Having at least basic testing and coverage will ensure your app does not deploy if breaking changes are introduced by your work or dependabot (see below).
-  - `deploy`
-    - All code deployed by the `marketplace-partner-apps` repo must be hosted by contentful. Your deploy job should look something like this:
-      `contentful-app-scripts upload --ci --bundle-dir ./build --organization-id ${DEFINITIONS_ORG_ID} --definition-id APP_DEFINITION_ID --token ${CONTENTFUL_CMA_TOKEN}` - Make sure `--bundle-dir` points to the output of your build process (`./build` if you used `"react-scripts build"`). - `DEFINITIONS_ORG_ID` and `CONTENTFUL_CMA_TOKEN` do not need to be changed and will be appropriately filled by the build process. - The value of `APP_DEFINITION_ID` can be the id you might have used to test your deploy in you contentful space. This value can be found in the app definition after creating a custom app. **The Ecosystems Inteegrations team will update this value to a shared, official space. Please do not update it in subsequent changes/pull requests.**
 
 > **Please note that dependabot is enabled in this repo and will run automatically.**
 > While it will attempt to only upgrade dependencies without breaking changes, it is possible it will still introduce issues. Creating and maintaining comprehensive tests is critical to preventing code and build issues.
