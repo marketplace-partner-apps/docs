@@ -15,13 +15,6 @@ Head over to the [marketplace](https://www.contentful.com/marketplace/) and foll
 
 ### Committing and updating your repo
 
-When you are ready to submit your app to the [marketplace apps repo](https://github.com/contentful/marketplace-partner-apps), clone the repo locally, create a new branch with a descriptive name for the app/changes you are introducing, and create a pull-request against the `main` branch. An ecosystems integrations will review your PR soon and let you know if any changes or clarifications are needed. To ensure the fastest approval time on your PR, make sure you:
-
-- Fill out the pull-request template as much as possible. Screenshots, images, and videos are often helpful for providing context and are encouraged.
-- Comment your changes, either in GitHub or the code itself to provide reviewers more context than they might get otherwise.
-- Ensure your changes are wholly contained within your app's folder, and do not make alterations to other folders or the root level. If you have need for root-level changes, please create an issue instead.
-- Prevent / reduce references to external resources and code. The `marketplace-partner-apps` is intended to be open and transparent and any external resources will be _highly_ scrutinized.
-
 ## Building your own app
 
 The best way to get started on app development is with our [create-contentful-app](https://github.com/contentful/create-contentful-app) CLI tool.
